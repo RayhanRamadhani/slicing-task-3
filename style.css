@@ -29,6 +29,31 @@ span {
   display: inline;
 }
 
+/* Testimonial Carousel Scrollbar */
+#testimonialCarousel {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #FE5F66 #f1f1f1; /* Firefox */
+}
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+#testimonialCarousel::-webkit-scrollbar {
+  height: 8px;
+}
+
+#testimonialCarousel::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+#testimonialCarousel::-webkit-scrollbar-thumb {
+  background: #FE5F66;
+  border-radius: 10px;
+}
+
+#testimonialCarousel::-webkit-scrollbar-thumb:hover {
+  background: #e54950;
+}
+
 .ctext-grey {
   text-decoration: none;
   color: gray;
