@@ -50,7 +50,7 @@ span {
   bottom: 0;
   left: 0;
   width: 100vw;
-  height: 350px; /* Default mobile - optimized */
+  height: 1000px; /* Default mobile*/
   z-index: -1;
   margin-left: calc(-50vw + 50%);
   object-fit: cover;
