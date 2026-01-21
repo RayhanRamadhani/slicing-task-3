@@ -16,6 +16,10 @@
   --bs-body-font-family: 'Rubik', sans-serif;
 }
 
+body {
+  padding-top: 80px;
+}
+
 a {
   text-decoration: none;
   color: gray;

@@ -10,7 +10,8 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg mb-5">
+        
+        <nav class="navbar fixed-top navbar-expand-lg mb-5 bg-white">
             <div class="container">
                 <a class="navbar-brand" href="#"><img src="./assets/Logo.png" alt="LaslesVPN"></a>
                 
@@ -19,7 +20,7 @@
                 </button>
                 
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                    <ul class="navbar-nav gap-lg-5 gap-3 mx-auto">
+                    <ul class="navbar-nav gap-lg-5 mx-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="#">About</a>
                         </li>
@@ -48,8 +49,8 @@
 
     <main>
         <!-- div1 -->
-        <div class="container mb-5 mt-5">
-            <div class="row">
+        <div class="container my-5">
+            <div class="row my-5">
                     <div class="col">
                         <h1 class="mb-3 fw-semibold">Want anything to be easy with <span class="fw-bold">LaslesVPN.</span></h1>
                         <p class="mb-4 fw-small">
@@ -154,10 +155,11 @@
         </div>
 
         <!-- div5 -->
-        <div class="container mt-5 mb-5 align-content-center">
-            <div class="d-flex column-gap-5 justify-content-center">
+        <div class="container mt-5 mb-5">
+            <div class="row g-4 justify-content-center">
                 <!-- card1 -->
-                <div class="card border-2 align-content-center text-center px-4 py-4 rounded-4" style="width: 20rem;">
+                <div class="col-12 col-md-6 col-lg-4">
+                <div class="card border-2 align-content-center text-center px-4 py-4 rounded-4 h-100">
                     <div class="py-4"></div>
                     <img src="./assets/box-icon.png" class="align-self-center mb-3" alt="..." style="width: 135px; height: auto;">
                     <div class="card-body d-flex flex-column h-100">
@@ -188,8 +190,10 @@
                         </div>
                     </div>
                 </div>
+                </div>
                 <!-- card2 -->
-                <div class="card border-2 align-content-center text-center px-4 py-4 rounded-4" style="width: 20rem;">
+                <div class="col-12 col-md-6 col-lg-4">
+                <div class="card border-2 align-content-center text-center px-4 py-4 rounded-4 h-100">
                     <div class="py-4"></div>
                     <img src="./assets/box-icon.png" class="align-self-center mb-3" alt="..." style="width: 135px; height: auto;">
                     <div class="card-body d-flex flex-column h-100">
@@ -224,8 +228,10 @@
                         </div>
                     </div>
                 </div>
+                </div>
                 <!-- card3 -->
-                <div class="card border-2 border-danger align-content-center text-center px-4 py-4 rounded-4" style="width: 20rem;">
+                <div class="col-12 col-md-6 col-lg-4">
+                <div class="card border-2 border-danger align-content-center text-center px-4 py-4 rounded-4 h-100">
                     <div class="py-4"></div>
                     <img src="./assets/box-icon.png" class="align-self-center mb-3" alt="..." style="width: 135px; height: auto;">
                     <div class="card-body d-flex flex-column h-100">
@@ -264,6 +270,7 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
         </div>
 
@@ -278,12 +285,12 @@
         </div>
 
         <!-- div7 -->
-        <div class="container mt-5 mb-5 align-content-center">
+        <div class="container text-center">
             <img src="./assets/Huge Global.png" alt="" class="img-fluid">
         </div>
 
         <!-- div8 -->
-        <div class="container align-content-center">
+        <div class="container text-center">
             <img src="./assets/Sponsored.png" alt="" class="img-fluid">
         </div>
 
@@ -328,41 +335,42 @@
             </div>
         </div>
 
-        <!-- div12 -->
-        <div class="container shadow p-3 my-5 y-5 px-5 rounded-2 ">
-            <div class="row justify-content-between">
-                <!-- bagian1 -->
-                <div class="col">
-                    <div class="container">
-                        <div class="d-flex gap-4">
-                            <div class="row">
-                                <h1 class="fw-semibold">Subscribe Now for Get Special Features!</h1>
-                                <p>
-                                    Let's subscribe with us and find the fun.
-                                </p>
+        <!-- div12 dan div13 -->
+        <div class="position-relative">
+            <img src="./assets/grey-bg.png" alt="" style="position: absolute; bottom: 0; left: 0; width: 100vw; height: 450px; z-index: -1; margin-left: calc(-50vw + 50%);">
+            
+            <!-- div12 -->
+            <div class="container shadow p-3 my-5 y-5 px-5 bg-white rounded-2 position-relative">
+                <div class="row justify-content-between">
+                    <!-- bagian1 -->
+                    <div class="col">
+                        <div class="container">
+                            <div class="d-flex gap-4">
+                                <div class="row">
+                                    <h1 class="fw-semibold">Subscribe Now for Get Special Features!</h1>
+                                    <p>
+                                        Let's subscribe with us and find the fun.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- bagian2 -->
-                <div class="col align-content-center justify-content-center">
-                    <div class="container">
-                        <div class="d-flex align-content-center justify-content-end">
-                            <div class="row">
-                                <button type="button" class="btn btn-danger btn-lg rounded-l fw-medium px-4 shadow-cpink p-3">Subscribe Now</button>
+                    <!-- bagian2 -->
+                    <div class="col align-content-center justify-content-center">
+                        <div class="container">
+                            <div class="d-flex align-content-center justify-content-end">
+                                <div class="row">
+                                    <button type="button" class="btn btn-danger btn-lg rounded-l fw-medium px-4 shadow-cpink p-3">Subscribe Now</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        </div>
-
-        <!-- div13 -->
-        <div class="container mb-5 mt-5 pt-5 position-relative">
-            <img src="./assets/grey-bg.png" alt="" class="position-absolute top-0 start-0 w-100 h-100 z-n1">
-            <div class="row">
+            <!-- div13 -->
+            <div class="container mt-5 pt-4 position-relative">
+                <div class="row">
                     <div class="col-lg-5 col-md-6">
                         <img src="./assets/Logo.png" alt="" class="mb-3">
                         <p><span class="fw-bold">LaslesVPN</span> is a private virtual network that has unique features and has high security.</p>
@@ -402,7 +410,9 @@
                 </div>
             </div>
         </div>
+        </div>
     </main>
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
