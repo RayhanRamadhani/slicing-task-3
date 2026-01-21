@@ -29,29 +29,15 @@ span {
   display: inline;
 }
 
-/* Testimonial Carousel Scrollbar */
+/* Testimonial Carousel - Hide Scrollbar */
 #testimonialCarousel {
-  scrollbar-width: thin; /* Firefox */
-  scrollbar-color: #FE5F66 #f1f1f1; /* Firefox */
+  scrollbar-width: none; /* Firefox - sembunyikan scrollbar */
+  -ms-overflow-style: none; /* IE and Edge - sembunyikan scrollbar */
 }
 
-/* Webkit browsers (Chrome, Safari, Edge) */
+/* Webkit browsers (Chrome, Safari, Edge) - sembunyikan scrollbar */
 #testimonialCarousel::-webkit-scrollbar {
-  height: 8px;
-}
-
-#testimonialCarousel::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
-}
-
-#testimonialCarousel::-webkit-scrollbar-thumb {
-  background: #FE5F66;
-  border-radius: 10px;
-}
-
-#testimonialCarousel::-webkit-scrollbar-thumb:hover {
-  background: #e54950;
+  display: none; /* Sembunyikan scrollbar sepenuhnya */
 }
 
 .ctext-grey {
@@ -116,6 +102,39 @@ span {
 
 @media (min-width: 768px) {
   .testimonial-card {
-    width: 380px;   /* Tablet/desktp[ */
+    width: 380px;   /* Tablet/desktop */
+  }
+}
+
+/* Custom Scroll Dot Indicator */
+.scroll-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #DDE0E4; /* Inactive */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scroll-dot:hover {
+  background-color: #FE5F66; /* Red on hover */
+  transform: scale(1.2);
+}
+
+.scroll-dot.active {
+  width: 45px; /* Elongated active dot */
+  border-radius: 12px; /* Pill */
+  background-color: #F53855; /* Red active */
+}
+
+/* Responsive dot size */
+@media (max-width: 768px) {
+  .scroll-dot {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .scroll-dot.active {
+    width: 35px;
   }
 }

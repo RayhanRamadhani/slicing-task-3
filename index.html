@@ -430,7 +430,10 @@
             <!-- Testimoni -->
             <div class="container mt-5 mb-5">
                 <div class="d-flex justify-content-between align-items-center">
-                    <img src="./assets/pagescroll.png" alt="Page indicator" style="width: 100px; height: auto;">
+                    <!-- Custom Dot Indikator -->
+                    <div id="dotIndicator" class="d-flex gap-2 align-items-center">
+
+                    </div>
                     <div class="d-flex gap-2">
                         <button id="btnPrev" type="button" class="btn p-0 border-0" aria-label="Previous testimonials">
                             <img src="./assets/btn-left.png" alt="" style="width: 55px; height: auto;">
@@ -518,12 +521,81 @@
         const carousel = document.getElementById('testimonialCarousel');
         const btnPrev = document.getElementById('btnPrev');
         const btnNext = document.getElementById('btnNext');
+        const dotIndicator = document.getElementById('dotIndicator');
+        
+        // Get all testimonial cards
+        const cards = carousel.querySelectorAll('.testimonial-card');
+        const totalCards = cards.length;
+        
+        // Generate dot indicators dynamically
+        function generateDots() {
+            dotIndicator.innerHTML = '';
+            
+            for (let i = 0; i < totalCards; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'scroll-dot';
+                dot.dataset.index = i;
+                
+                // Add click event to scroll to specific card
+                dot.addEventListener('click', () => {
+                    scrollToCard(i);
+                });
+                
+                dotIndicator.appendChild(dot);
+            }
+        }
+        
+        // Scroll to specific card by index
+        function scrollToCard(index) {
+            const scrollDistance = getScrollDistance();
+            const targetScroll = scrollDistance * index;
+            
+            carousel.scrollTo({
+                left: targetScroll,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Update active dot based on scroll position
+        function updateActiveDot() {
+            const scrollLeft = carousel.scrollLeft;
+            const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+            const scrollDistance = getScrollDistance();
+            
+            let currentIndex;
+            
+            // cek apa card mentok di ujung
+            if (scrollLeft >= maxScroll - 1) {
+                currentIndex = totalCards - 1;
+            } 
+            // Indikator pill mentok di awal
+            else if (scrollLeft <= 1) {
+                currentIndex = 0;
+            } 
+            // Normal calculation buat posisi tengah
+            else {
+                currentIndex = Math.round(scrollLeft / scrollDistance);
+            }
+            
+            // Clamp index to valid range (pastikan tidak keluar batas)
+            currentIndex = Math.max(0, Math.min(currentIndex, totalCards - 1));
+            
+            // Remove active class from all dots
+            const dots = dotIndicator.querySelectorAll('.scroll-dot');
+            dots.forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
         
         // Get card width + gap
         function getScrollDistance() {
             const card = carousel.querySelector('.testimonial-card');
             const cardWidth = card.offsetWidth;
-            const gap = 16; // gap-3 = 1rem = 16px
+            const gap = 16;
             return cardWidth + gap;
         }
         
@@ -545,7 +617,7 @@
             });
         });
         
-        // Optional: Update button states based on scroll position
+        // Update button states based on scroll position
         function updateButtonStates() {
             const scrollLeft = carousel.scrollLeft;
             const maxScroll = carousel.scrollWidth - carousel.clientWidth;
@@ -558,11 +630,16 @@
             btnNext.style.cursor = scrollLeft >= maxScroll - 1 ? 'not-allowed' : 'pointer';
         }
         
-        // Update button states on scroll
-        carousel.addEventListener('scroll', updateButtonStates);
+        // Update button states and active dot on scroll
+        carousel.addEventListener('scroll', () => {
+            updateButtonStates();
+            updateActiveDot();
+        });
         
-        // Initialize button states
+        // Initialize
+        generateDots();
         updateButtonStates();
+        updateActiveDot();
     </script>
 </body>
 </html>
