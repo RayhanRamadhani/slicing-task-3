@@ -37,3 +37,60 @@ span {
 .shadow-cpink {
     box-shadow: 0 8px 16px 0 rgba(255, 65, 65, 0.755);
 }
+
+/* Grey Background Image - Responsive */
+.grey-bg-image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 1200px; /* Default mobile */
+  z-index: -1;
+  margin-left: calc(-50vw + 50%);
+  object-fit: cover;
+}
+
+/* Tablet breakpoint (≥768px) */
+@media (min-width: 768px) {
+  .grey-bg-image {
+    height: 520px;
+  }
+}
+
+/* Desktop breakpoint (≥992px) */
+@media (min-width: 992px) {
+  .grey-bg-image {
+    height: 510px;
+  }
+}
+
+/* Large Desktop breakpoint (≥1200px) */
+@media (min-width: 1200px) {
+  .grey-bg-image {
+    height: 510px;
+  }
+}
+
+/* Statistics Icon - Responsive */
+.stat-icon {
+  width: auto;
+  height: 35px; /* Default mobile */
+}
+
+@media (min-width: 768px) {
+  .stat-icon {
+    height: 50px; /* Desktop */
+  }
+}
+
+/* Testimonial Card Custom Width */
+.testimonial-card {
+  min-width: 350px; /* Default mobile minimal */
+  width: 350px;     /* Lebar fix */
+}
+
+@media (min-width: 768px) {
+  .testimonial-card {
+    width: 380px;   /* Tablet/desktp[ */
+  }
+}
