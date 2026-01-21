@@ -441,11 +441,11 @@
             </div>
         </section>
 
-        <!-- Call to Action Section -->
-        <div class="position-relative" data-aos="fade-up" data-aos-duration="2500">
+        <!-- Call to Action Sect -->
+        <div class="position-relative">
             <img src="./assets/grey-bg.png" alt="Background decoration" class="grey-bg-image">
             
-            <section id="cta">
+            <section id="cta" data-aos="fade-up" data-aos-duration="3000">
                 <div class="container shadow p-3 my-5 y-5 px-5 bg-white rounded-2 position-relative">
                     <div class="row justify-content-between align-items-center">
                         <div class="col-12 col-lg-7 mb-3 mb-lg-0">
@@ -509,7 +509,6 @@
         </div>
     </main>
 
-    <!-- Testing javascript -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
@@ -517,17 +516,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     
     <script>
-        // Testimonial Carousel Functionality
         const carousel = document.getElementById('testimonialCarousel');
         const btnPrev = document.getElementById('btnPrev');
         const btnNext = document.getElementById('btnNext');
         const dotIndicator = document.getElementById('dotIndicator');
         
-        // Get all testimonial cards
         const cards = carousel.querySelectorAll('.testimonial-card');
         const totalCards = cards.length;
         
-        // Generate dot indicators dynamically
         function generateDots() {
             dotIndicator.innerHTML = '';
             
@@ -536,7 +532,6 @@
                 dot.className = 'scroll-dot';
                 dot.dataset.index = i;
                 
-                // Add click event to scroll to specific card
                 dot.addEventListener('click', () => {
                     scrollToCard(i);
                 });
@@ -545,7 +540,6 @@
             }
         }
         
-        // Scroll to specific card by index
         function scrollToCard(index) {
             const scrollDistance = getScrollDistance();
             const targetScroll = scrollDistance * index;
@@ -556,7 +550,6 @@
             });
         }
         
-        // Update active dot based on scroll position
         function updateActiveDot() {
             const scrollLeft = carousel.scrollLeft;
             const maxScroll = carousel.scrollWidth - carousel.clientWidth;
@@ -564,23 +557,20 @@
             
             let currentIndex;
             
-            // cek apa card mentok di ujung
             if (scrollLeft >= maxScroll - 1) {
                 currentIndex = totalCards - 1;
             } 
-            // Indikator pill mentok di awal
+
             else if (scrollLeft <= 1) {
                 currentIndex = 0;
             } 
-            // Normal calculation buat posisi tengah
+
             else {
                 currentIndex = Math.round(scrollLeft / scrollDistance);
             }
             
-            // Clamp index to valid range (pastikan tidak keluar batas)
             currentIndex = Math.max(0, Math.min(currentIndex, totalCards - 1));
             
-            // Remove active class from all dots
             const dots = dotIndicator.querySelectorAll('.scroll-dot');
             dots.forEach((dot, index) => {
                 if (index === currentIndex) {
@@ -591,7 +581,6 @@
             });
         }
         
-        // Get card width + gap
         function getScrollDistance() {
             const card = carousel.querySelector('.testimonial-card');
             const cardWidth = card.offsetWidth;
@@ -599,7 +588,6 @@
             return cardWidth + gap;
         }
         
-        // Scroll to next card
         btnNext.addEventListener('click', () => {
             const scrollDistance = getScrollDistance();
             carousel.scrollBy({
@@ -608,7 +596,6 @@
             });
         });
         
-        // Scroll to previous card
         btnPrev.addEventListener('click', () => {
             const scrollDistance = getScrollDistance();
             carousel.scrollBy({
@@ -617,12 +604,10 @@
             });
         });
         
-        // Update button states based on scroll position
         function updateButtonStates() {
             const scrollLeft = carousel.scrollLeft;
             const maxScroll = carousel.scrollWidth - carousel.clientWidth;
             
-            // Disable/enable buttons based on position
             btnPrev.style.opacity = scrollLeft <= 0 ? '0.5' : '1';
             btnPrev.style.cursor = scrollLeft <= 0 ? 'not-allowed' : 'pointer';
             
@@ -630,13 +615,11 @@
             btnNext.style.cursor = scrollLeft >= maxScroll - 1 ? 'not-allowed' : 'pointer';
         }
         
-        // Update button states and active dot on scroll
         carousel.addEventListener('scroll', () => {
             updateButtonStates();
             updateActiveDot();
         });
         
-        // Initialize
         generateDots();
         updateButtonStates();
         updateActiveDot();
