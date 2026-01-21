@@ -138,3 +138,15 @@ span {
     width: 35px;
   }
 }
+
+.zoom {
+  padding: 50px;
+  /* Smooth animation for the 'transform' property over 0.3 seconds */
+  transition: transform 0.3s ease; 
+  margin: 0 auto;
+}
+
+/* Styles applied when the mouse hovers over the element */
+.zoom:hover {
+  transform: scale(1.05); 
+}
