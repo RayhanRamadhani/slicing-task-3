@@ -22,7 +22,12 @@ body {
 
 a {
   text-decoration: none;
-  color: gray;
+  color: rgb(109, 109, 109);
+}
+
+.ctext-grey {
+  text-decoration: none;
+  color: rgb(183, 183, 183);
 }
 
 span {
