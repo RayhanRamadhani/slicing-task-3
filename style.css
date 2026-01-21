@@ -40,11 +40,6 @@ span {
   display: none; /* Sembunyikan scrollbar sepenuhnya */
 }
 
-.ctext-grey {
-  text-decoration: none;
-  color: gray;
-}
-
 .shadow-cpink {
     box-shadow: 0 8px 16px 0 rgba(255, 65, 65, 0.755);
 }
@@ -55,7 +50,7 @@ span {
   bottom: 0;
   left: 0;
   width: 100vw;
-  height: 1200px; /* Default mobile */
+  height: 350px; /* Default mobile - optimized */
   z-index: -1;
   margin-left: calc(-50vw + 50%);
   object-fit: cover;
